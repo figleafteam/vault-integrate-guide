@@ -7,7 +7,7 @@
 
 ## Steps to integrate
 
-1. `npm install --save @figleafteam/vault-electron && npm install --save @figleafteam/web-assembly-connector`
+1. `npm install --save @figleafteam/vault-electron && npm install --save @figleafteam/web-assembly-connector && npm install --save @figleafteam/figleaf-web-sdk`
 
 2. You have to add _framework folder from @figleafteam/web-assembly-connector/dist/assets to root in your app. \
    We should have access to fetch this folder from http://{YOUR_DOMAIN}/_framework/. For example http://localhost:4200/_framework/. \
