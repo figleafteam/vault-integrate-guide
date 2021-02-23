@@ -1,6 +1,9 @@
 # Hello friend! It's an instruction how integrate Figleaf Vault to React
 
-> This project includes live example. That you can see [here](http://localhost:3000)
+> This project includes live example. Follow next steps:
+> 1. `npm i`
+> 2. `npm start`
+> 3. Open `localhost:4200`
 
 ## Steps to integrate
 
