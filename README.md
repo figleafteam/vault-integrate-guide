@@ -1,4 +1,4 @@
-# Hello friend! It's an instruction how integrate Figleaf Vault to React
+# It's an instruction how integrate Figleaf Vault to React
 
 > This project includes live example. Follow next steps:
 > 1. `npm i`
