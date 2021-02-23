@@ -18,8 +18,11 @@ function App() {
     }, [])
 
     const login = () => {
-        figleafSdk.login(email, password);
-        setShowVault(true)
+        figleafSdk.login(email, password)
+            .then(() => setShowVault(true))
+            .catch((e) => {
+                // handle error
+            });
     }
 
     return (

@@ -1,9 +1,12 @@
-# Hello friend! It's an instruction how integrate Figleaf Vault to React
+# Hello! It's a guide how integrate Figleaf Vault to React
 
 > This project includes live example. Follow next steps:
 > 1. `npm i`
 > 2. `npm start`
 > 3. Open `localhost:4200`
+
+##Quickstart
+>See [App.tsx](./src/App.tsx) for quick start.
 
 ## Steps to integrate
 
@@ -41,5 +44,12 @@
 - `openUrl: OpenUrl;` - custom function for open link
 - `(optional) notificationService?: NotificationService;` - toastify with different messages (errors, etc)
 
-### `figleafSdk.start({ partner: 'figleaf' })` takes the following:
-- `partner` - partner name
+### figleafSdk has next methods:
+- `figleafSdk.start(options: {partner: string}): void`
+- `figleafSdk.login(email: string, password: string): Promise`
+- `figleafSdk.logout(): Promise`
+- `figleafSdk.getMessenger(): Messenger`
+
+### Test account
+`email = 'gera+am1sdlkmalskdm@figleaf.com'` \
+`password = 'Qwerty12345'`
