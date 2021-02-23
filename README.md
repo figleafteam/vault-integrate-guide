@@ -33,7 +33,7 @@
 </App>
 ```
 
-## Api
+## API
 
 ### `VaultElectronWrapper(props: InitVaultElectronProps)` takes the following:
 - `baseName: string;` - the base URL for our locations. A properly formatted basename should have a leading slash, but no trailing slash. (ex. `/vault`).
