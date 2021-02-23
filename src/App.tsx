@@ -1,40 +1,37 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, {useEffect, useState} from 'react';
 import {VaultElectronWrapper} from '@figleafteam/vault-electron';
-import {Figleaf} from '@figleafteam/messenger';
+import './App.css';
+import {FigleafSDK} from '@figleafteam/figleaf-web-sdk';
+import {ButtonComponent} from '@figleafteam/components';
 
-const figleaf = new Figleaf();
+const figleafSdk = new FigleafSDK();
+const email = 'gera+am1sdlkmalskdm@figleaf.com';
+const password = 'Qwerty12345';
 
 function App() {
     const [showVault, setShowVault] = useState(false);
+
+    useEffect(() => {
+        figleafSdk.start({
+            partner: 'figleaf',
+        });
+    }, [])
+
     const login = () => {
-        figleaf.login('gera+am1sdlkmalskdm@figleaf.com')
-
-        setTimeout(() => setShowVault(true), 5000)
+        figleafSdk.login(email, password);
+        setShowVault(true)
     }
-    const unlock = () => {
-        (window as any).figleafBackgroundService.unlock()
 
-        setTimeout(() => setShowVault(true), 5000)
-
-    }
-    const getVaultItems = () => {
-        (window as any).figleafBackgroundService.getVaultItems('gera+am1sdlkmalskdm@figleaf.com')
-    }
     return (
-        <div>
-            <header>
-                <button onClick={login}>Login</button>
-                <button onClick={unlock}>Unlock</button>
-                <button onClick={getVaultItems}>getVaultItems</button>
-                {showVault && <div className="vault">
-                    <VaultElectronWrapper
-                        baseName="vault"
-                        messenger={figleaf.getMessenger()}
-                        openUrl={(url: string) => console.log(url)}
-                    />
-                </div>}
-            </header>
+        <div className="vault">
+            <h3 className="vault__title">Vault integration example</h3>
+            {!showVault &&
+            <div className="vault__button"><ButtonComponent onClick={login} text='Login' type='primary'/></div>}
+            {showVault && <div className="vault__wrapper"><VaultElectronWrapper
+                baseName="vault"
+                messenger={figleafSdk.getMessenger()}
+                openUrl={(url: string) => console.log(url)}
+            /></div>}
         </div>
     );
 }
