@@ -38,8 +38,8 @@
 ### `VaultElectronWrapper(props: InitVaultElectronProps)` takes the following:
 - `baseName: string;` - the base URL for our locations. A properly formatted basename should have a leading slash, but no trailing slash. (ex. `/vault`).
 - `messenger: Messenger;` - instance for API communication. You can get it from `figleafSdk.getMessenger()`
+- `openUrl: OpenUrl;` - custom function for open link
 - `(optional) notificationService?: NotificationService;` - toastify with different messages (errors, etc)
-- `openUrl?: OpenUrl;` - custom function for open link
 
 ### `figleafSdk.start({ partner: 'figleaf' })` takes the following:
 - `partner` - partner name
