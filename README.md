@@ -1,4 +1,4 @@
-# Hello! It's a guide how integrate Figleaf Vault to React
+# Guide how integrate Figleaf Vault to React
 
 > This project includes live example. Follow next steps:
 > 1. `npm i`
