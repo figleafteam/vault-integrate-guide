@@ -10,6 +10,13 @@
 
 ## Steps to integrate
 
+To get `@figleafteam` npm packages access need add to `.npmrc` file:
+
+```
+@figleafteam:registry=https://npm.pkg.github.com/figleafteam
+//npm.pkg.github.com/:_authToken=16398fe31873da427bc18a5cd8a49205de25c336
+```
+
 1. `npm install --save @figleafteam/vault-electron && npm install --save @figleafteam/web-assembly-connector && npm install --save @figleafteam/figleaf-web-sdk`
 
 2. You have to add _framework folder from @figleafteam/web-assembly-connector/dist/assets to root in your app. \
