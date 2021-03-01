@@ -6,6 +6,7 @@
 > 3. Open `localhost:4200`
 
 ##Quickstart
+
 >See [App.tsx](./src/App.tsx) for quick start.
 
 ## Steps to integrate
@@ -17,9 +18,9 @@
    In this example we added the next code to the plugins section in the webpack:
    `fs.copySync(path.resolve('node_modules/@figleafteam/web-assembly-connector/dist/assets'), paths.appPublic)`
    
-3. Create an instance of Figleaf SDK: `const figleafSdk = new FigleafSDK();`
+3. Create an instance of Figleaf SDK: `const figleafSdk = new FigleafSDK({options});`
 
-4. Start Figleaf SDK: `figleafSdk.start({ partner: 'figleaf' });`
+4. Start Figleaf SDK: `figleafSdk.start();`
 
 5. Login to figleaf: `figleafSdk.login(email, password);`
 
@@ -44,10 +45,22 @@
 - `openUrl: OpenUrl;` - custom function for open link
 - `(optional) notificationService?: NotificationService;` - toastify with different messages (errors, etc)
 
+### `new FigleafSDK({options})` takes the following:
+- `environment?: 'test' | 'test3' | 'stage' | 'production';` - default is `production`
+- `productVersion: string;`
+- `deviceId: string;`
+- `isInternal?: boolean;` - default is `false`
+- `distibutionChannel?: string;` - default is `aura`
+- `carrierId?: string;`
+- `deviceType?: string;`
+- `deviceName?: string;`
+
 ### figleafSdk has next methods:
-- `figleafSdk.start(options: {partner: string}): void`
-- `figleafSdk.login(email: string, password: string): Promise`
+- `figleafSdk.start(): void`
+- `figleafSdk.loginWithToken(email: string, password: string, token: string): Promise`
 - `figleafSdk.logout(): Promise`
+- `figleafSdk.onLogout(() => void): void` - listener for token expiration
+- `figleafSdk.clearListeners(): void`
 - `figleafSdk.getMessenger(): Messenger`
 
 ### Test account
