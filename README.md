@@ -66,3 +66,5 @@
 ### Test account
 `email = 'gera+am1sdlkmalskdm@figleaf.com'` \
 `password = 'Qwerty12345'`
+`environment = 'test3'` \
+`deviceId = 'F81F6C61-0DE6-40B7-8AAB-56B11BD57D47'` \
