@@ -1,11 +1,12 @@
 # Guide how integrate Figleaf Vault to React
 
 > This project includes live example. Follow next steps:
-> 1. `npm i`
-> 2. `npm start`
-> 3. Open `localhost:4200`
+> 1. add to `.npmrc` access token (do not commit token)
+> 2. `npm i`
+> 3. `npm start`
+> 4. Open `localhost:4200`
 
-##Quickstart
+## Quickstart
 
 >See [App.tsx](./src/App.tsx) for quick start.
 
@@ -22,7 +23,7 @@
 
 4. Start Figleaf SDK: `figleafSdk.start();`
 
-5. Login to figleaf: `figleafSdk.login(email, password);`
+5. Login to figleaf: `figleafSdk.loginWithToken(email, password, token);`
 
 6. Added VaultElectronWrapper components to your app:
 ```js
@@ -64,7 +65,4 @@
 - `figleafSdk.getMessenger(): Messenger`
 
 ### Test account
-`email = 'gera+am1sdlkmalskdm@figleaf.com'` \
-`password = 'Qwerty12345'`
-`environment = 'test3'` \
-`deviceId = 'F81F6C61-0DE6-40B7-8AAB-56B11BD57D47'` \
+For testing you need create user on backend. When user created need call `figleafSdk.loginWithToken`
