@@ -27,7 +27,7 @@ function App() {
     }, [])
 
     const login = () => {
-        figleafSdk.loginWithToken(email, password, defaultToken)
+        figleafSdk.login(email, password)
             .then(() => setShowVault(true))
             .catch((e) => {
                 // handle error

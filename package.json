@@ -6,7 +6,7 @@
     "@babel/core": "7.12.3",
     "@figleafteam/components": "^0.0.37",
     "@figleafteam/vault-electron": "^0.0.37",
-    "@figleafteam/web-assembly-connector": "^0.0.54",
+    "@figleafteam/web-assembly-connector": "^0.0.55",
     "@figleafteam/figleaf-web-sdk": "^0.0.37",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
     "@svgr/webpack": "5.5.0",
