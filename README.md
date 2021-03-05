@@ -1,11 +1,12 @@
 # Guide how integrate Figleaf Vault to React
 
 > This project includes live example. Follow next steps:
-> 1. `npm i`
-> 2. `npm start`
-> 3. Open `localhost:4200`
+> 1. add to `.npmrc` access token (do not commit token)
+> 2. `npm i`
+> 3. `npm start`
+> 4. Open `localhost:4200`
 
-##Quickstart
+## Quickstart
 
 >See [App.tsx](./src/App.tsx) for quick start.
 
@@ -13,8 +14,8 @@
 
 1. `npm install --save @figleafteam/vault-electron && npm install --save @figleafteam/web-assembly-connector && npm install --save @figleafteam/figleaf-web-sdk`
 
-2. You have to add _framework folder from @figleafteam/web-assembly-connector/dist/assets to root in your app. \
-   We should have access to fetch this folder from http://{YOUR_DOMAIN}/_framework/. For example http://localhost:4200/_framework/. \
+2. You have to add `framework` folder from `@figleafteam/web-assembly-connector/dist/assets` to root in your app. \
+   We should have access to fetch this folder from http://{YOUR_DOMAIN}/framework/. For example http://localhost:4200/framework/. \
    In this example we added the next code to the plugins section in the webpack:
    `fs.copySync(path.resolve('node_modules/@figleafteam/web-assembly-connector/dist/assets'), paths.appPublic)`
    
@@ -22,7 +23,7 @@
 
 4. Start Figleaf SDK: `figleafSdk.start();`
 
-5. Login to figleaf: `figleafSdk.login(email, password);`
+5. Login to figleaf: `figleafSdk.loginWithToken(email, password, token);`
 
 6. Added VaultElectronWrapper components to your app:
 ```js
@@ -64,5 +65,4 @@
 - `figleafSdk.getMessenger(): Messenger`
 
 ### Test account
-`email = 'gera+am1sdlkmalskdm@figleaf.com'` \
-`password = 'Qwerty12345'`
+For testing you need create user on backend. When user created need call `figleafSdk.loginWithToken`
